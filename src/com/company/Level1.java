@@ -1,4 +1,4 @@
-/**
+package com.company; /**
  * Created by lucas.lisboa on 7/17/2017.
  */
 import edu.digipen.gameobject.GameObject;

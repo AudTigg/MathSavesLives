@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         /* write your code here */
-        Game.initialize(30,50,60, Level);
+        Game.initialize(500,500,60, new Level1());
         while(Game.getQuit() == false)
             Game.update();
         Game.destroy();
