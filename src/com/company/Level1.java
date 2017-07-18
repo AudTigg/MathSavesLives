@@ -24,7 +24,7 @@ public class Level1 extends GameLevel
         ObjectManager.addGameObject(bubble);*/
         GameObject enemycar = new EnemyCar();
         ObjectManager.addGameObject(enemycar);
-Random r = new Random(10);
+Random r = new Random(5);
         enemycar.setPositionY(300);
         enemycar.setPositionX(50);
 
@@ -37,11 +37,14 @@ Random r = new Random(10);
         ObjectManager.addGameObject(LamborghiniHuracan);
 
         LamborghiniHuracan.setPositionY(-150);
-for(int i = 0; i < 10; ++i) {
-    GameObject obj1 = new EnemyCar();
-    obj1.setPosition(PFRandom.randomRange(-1000, 1000), 200 + i * 50);
-    ObjectManager.addGameObject(obj1);
-}
+
+        int i = 0;
+        while (i < 10) {
+            GameObject obj1 = new EnemyCar();
+            obj1.setPosition(PFRandom.randomRange(-450, 450), 200 + i * 50);
+            ObjectManager.addGameObject(obj1);
+            ++i;
+        }
 
         Graphics.setDrawCollisionData(true);
     }
