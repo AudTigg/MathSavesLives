@@ -13,4 +13,9 @@ public class DivisionCar extends GameObject {
     public void update(float dt) {
         setPositionY(getPositionY() - 1);
     }
+    @Override
+    public void collisionReaction(GameObject collidedWith){
+        setPosition(0,200);
+        setModulationColor(1.0f,0.0f,0.0f,0.5f);
+    }
 }

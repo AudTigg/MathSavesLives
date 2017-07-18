@@ -14,10 +14,11 @@ public class EnemyCar extends GameObject {
         setScaleY(-1);
     }
 
+
+
     @Override
     public void update(float dt) {
-        setPositionY(getPositionY() - 3);
-        setPositionX(getPositionX() + 3);
+        setPositionY(getPositionY() - 2);
         // setRotation(getRotation() + 3);
        /* if(InputManager.isPressed(KeyEvent.VK_LEFT)){
             float x = getPositionX();

@@ -6,6 +6,8 @@ import edu.digipen.gameobject.GameObject;
 import edu.digipen.gameobject.ObjectManager;
 import edu.digipen.level.GameLevel;
 
+import java.util.Random;
+
 /**
  * Created by lucas.lisboa on 7/14/2017.
  */
@@ -20,8 +22,9 @@ public class Level1 extends GameLevel
         ObjectManager.addGameObject(bubble);*/
         GameObject enemycar = new EnemyCar();
         ObjectManager.addGameObject(enemycar);
-
+Random r = new Random(10);
         enemycar.setPositionY(300);
+        enemycar.setPositionX(50);
 
         GameObject divisionCar = new DivisionCar();
         ObjectManager.addGameObject(divisionCar);
@@ -32,6 +35,8 @@ public class Level1 extends GameLevel
         ObjectManager.addGameObject(LamborghiniHuracan);
 
         LamborghiniHuracan.setPositionY(-150);
+
+
 
     }
 
