@@ -1,11 +1,10 @@
-package com.company; /**
+package com.company;
+/**
  * Created by lucas.lisboa on 7/17/2017.
  */
 import edu.digipen.gameobject.GameObject;
 import edu.digipen.gameobject.ObjectManager;
 import edu.digipen.level.GameLevel;
-
-import java.util.Objects;
 
 /**
  * Created by lucas.lisboa on 7/14/2017.
@@ -22,7 +21,7 @@ public class Level1 extends GameLevel
         GameObject enemycar = new EnemyCar();
         ObjectManager.addGameObject(enemycar);
 
-        GameObject divisionCar = new GameObject("divisionCar",120,160,"pixil-layer-Background (4).png");
+        GameObject divisionCar = new DivisionCar();
         ObjectManager.addGameObject(divisionCar);
 
 

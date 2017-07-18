@@ -16,6 +16,9 @@ public class EnemyCar extends GameObject {
 
     @Override
     public void update(float dt) {
+        setPositionX(getPositionX() + 2);
+        setPositionY(getPositionY() - 2);
+
         // setRotation(getRotation() + 3);
        /* if(InputManager.isPressed(KeyEvent.VK_LEFT)){
             float x = getPositionX();
