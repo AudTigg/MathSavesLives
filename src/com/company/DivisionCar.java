@@ -7,6 +7,10 @@ import edu.digipen.gameobject.GameObject;
  */
 public class DivisionCar extends GameObject {
     public DivisionCar(){
-        super("DivisionCar",120,160,"pixil-layer-Background (4).png");
+        super("DivisionCar", 120, 160, "pixil-layer-Background (4).png");
+    }
+    @Override
+    public void update(float dt) {
+        setPositionY(getPositionY() - 1);
     }
 }
