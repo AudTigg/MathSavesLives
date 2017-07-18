@@ -11,7 +11,7 @@ import java.awt.event.KeyEvent;
 public class EnemyCar extends GameObject {
     public EnemyCar() {
         super("EnemyCar", 120, 160, "pixil-layer-Background (2).png");
-        setScaleY(-1);
+        setRectangleCollider(40,80);
     }
 
 

@@ -4,7 +4,9 @@ package com.company;
  */
 import edu.digipen.gameobject.GameObject;
 import edu.digipen.gameobject.ObjectManager;
+import edu.digipen.graphics.Graphics;
 import edu.digipen.level.GameLevel;
+import edu.digipen.math.PFRandom;
 
 import java.util.Random;
 
@@ -35,9 +37,13 @@ Random r = new Random(10);
         ObjectManager.addGameObject(LamborghiniHuracan);
 
         LamborghiniHuracan.setPositionY(-150);
+for(int i = 0; i < 10; ++i) {
+    GameObject obj1 = new EnemyCar();
+    obj1.setPosition(PFRandom.randomRange(-1000, 1000), 200 + i * 50);
+    ObjectManager.addGameObject(obj1);
+}
 
-
-
+        Graphics.setDrawCollisionData(true);
     }
 
     @Override
