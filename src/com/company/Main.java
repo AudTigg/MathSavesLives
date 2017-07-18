@@ -10,7 +10,7 @@ import java.util.logging.Level;
 public class Main {
 
     public static void main(String[] args) {
-        /* write your code here */
+        Object Game;
         Game.initialize(500,500,60, new Level1());
         while(Game.getQuit() == false)
             Game.update();
