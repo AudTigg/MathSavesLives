@@ -15,11 +15,11 @@ public class Level1 extends GameLevel
 
     @Override
     public void create() {
-        GameObject obj1 = new GameObject("Object1", 160, 180, "pixil-layer-Background (2).png");
-        ObjectManager.addGameObject(obj1);
+        //GameObject obj1 = new GameObject("Object1", 160, 180, "pixil-layer-Background (2).png");
+        //ObjectManager.addGameObject(obj1);
         GameObject bubble = new GameObject("Bubble", 100, 100, "pixil-layer-Background (1).png");
         ObjectManager.addGameObject(bubble);
-        GameObject enemycar = new GameObject("EnemyCar",160,180, "pixil-layer-Background (2).png");
+        GameObject enemycar = new EnemyCar();
         ObjectManager.addGameObject(enemycar);
 
     }
@@ -31,7 +31,6 @@ public class Level1 extends GameLevel
 
     @Override
     public void update(float v) {
-
     }
 
     @Override
