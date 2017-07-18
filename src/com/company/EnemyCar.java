@@ -1,6 +1,9 @@
 package com.company;
 
+import edu.digipen.InputManager;
 import edu.digipen.gameobject.GameObject;
+
+import java.awt.event.KeyEvent;
 
 /**
  * Created by lucas.lisboa on 7/18/2017.
@@ -14,5 +17,14 @@ public class EnemyCar extends GameObject {
     @Override
     public void update(float dt) {
         // setRotation(getRotation() + 3);
+       /* if(InputManager.isPressed(KeyEvent.VK_LEFT)){
+            float x = getPositionX();
+            x+= -3;
+            setPositionX(x);
+        }
+        if (InputManager.isPressed(KeyEvent.VK_RIGHT)){
+            float x = getPositionX();
+            x += 3;
+            setPositionX(x);*/
+        }
     }
-}
