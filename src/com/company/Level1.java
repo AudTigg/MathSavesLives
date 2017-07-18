@@ -21,10 +21,17 @@ public class Level1 extends GameLevel
         GameObject enemycar = new EnemyCar();
         ObjectManager.addGameObject(enemycar);
 
+
+
         GameObject divisionCar = new DivisionCar();
         ObjectManager.addGameObject(divisionCar);
 
+        divisionCar.setPositionY(400);
 
+        GameObject LamborghiniHuracan = new LamborghiniHuracan();
+        ObjectManager.addGameObject(LamborghiniHuracan);
+
+        LamborghiniHuracan.setPositionY(-150);
 
     }
 
