@@ -15,10 +15,9 @@ public class Level1 extends GameLevel
 
     @Override
     public void create() {
-        GameObject obj1 = new GameObject("Object1", 25, 45, "pixil-layer-Background (2).png");
+        GameObject obj1 = new GameObject("Object1", 80, 120, "pixil-layer-Background (2).png");
         ObjectManager.addGameObject(obj1);
-        GameObject divisionCar = new DivisionCar();
-        ObjectManager.addGameObject(divisionCar);
+
     }
 
     @Override
