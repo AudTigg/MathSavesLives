@@ -13,6 +13,7 @@ import java.awt.event.KeyEvent;
     public class LamborghiniHuracan extends GameObject {
     public LamborghiniHuracan() {
         super("LamborghiniHuracan", 120, 160, "lambo hurican.png");
+        setRectangleCollider(40, 80);
     }
 
     @Override
@@ -53,9 +54,8 @@ import java.awt.event.KeyEvent;
 
     @Override
     public void collisionReaction(GameObject collidedWith) {
-        setPosition(40, 80);
         Graphics.setDrawCollisionData(true);
-        Graphics.setCollisionDataColor(0,1,0);
+        ObjectManager.;
 
     }
 }
