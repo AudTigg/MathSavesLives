@@ -8,8 +8,8 @@ import edu.digipen.gameobject.GameObject;
 public class Pi extends GameObject{
 
     public Pi() {
-        super("P1", 50, 50, "pixil-layer-Background (3).png ");
-        setRectangleCollider(50, 50);
+        super("P1", 60, 60, "pixil-layer-Background (3).png ");
+        setRectangleCollider(30, 30);
     }
 
     @Override
