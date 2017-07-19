@@ -1,6 +1,7 @@
 package com.company;
 
 import edu.digipen.gameobject.GameObject;
+import edu.digipen.gameobject.ObjectManager;
 
 /**
  * Created by lucas.lisboa on 7/18/2017.
@@ -16,6 +17,10 @@ public class DivisionCar extends GameObject {
     }
     @Override
     public void collisionReaction(GameObject collidedWith){
-        setPosition(0,200);
+        if(collidedWith.getName().equals("Bubbles"))
+        {
+            collidedWith.kill();
+            kill();
+        }
     }
 }

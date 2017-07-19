@@ -10,18 +10,16 @@ import java.awt.event.KeyEvent;
 /**
  * Created by lucas.lisboa on 7/18/2017.
  */
+
     public class LamborghiniHuracan extends GameObject {
+    int lives = 20;
     public LamborghiniHuracan() {
         super("LamborghiniHuracan", 120, 160, "lambo hurican.png");
         setRectangleCollider(40, 80);
     }
-    public int lives = 0;
 
     @Override
     public void update(float dt) {
-        if (lives <=0){
-            GameObject Gameover = new GameObject("Gameover", 500, 500, "download.png");
-        }
         if (InputManager.isPressed(KeyEvent.VK_RIGHT)) {
             float x = getPositionX();
             x += 3;
@@ -43,7 +41,7 @@ import java.awt.event.KeyEvent;
             setPositionX(x);
 
         }
-        if (InputManager.isPressed(KeyEvent.VK_SPACE)){
+        if (InputManager.isTriggered(KeyEvent.VK_SPACE)){
             {
                 GameObject bubble = new Bubbles();
                 ObjectManager.addGameObject(bubble);
@@ -58,9 +56,23 @@ import java.awt.event.KeyEvent;
 
     @Override
     public void collisionReaction(GameObject collidedWith) {
-        setPosition(40, 80);
-        Graphics.setDrawCollisionData(true);
-        Graphics.setCollisionDataColor(0,1,0);
-
+        if (collidedWith.getName().equals("EnemyCar")){
+            collidedWith.kill();
+            lives += -1;
+            if (lives <= 0){
+                kill();
+                GameObject gameOver = new GameOver();
+                ObjectManager.addGameObject(gameOver);
+            }
+        }
+        if (collidedWith.getName().equals("DivisionCar")){
+            collidedWith.kill();
+            lives += -3;
+            if (lives <= 0){
+                kill();
+                GameObject gameOver = new GameOver();
+                ObjectManager.addGameObject(gameOver);
+            }
+        }
     }
 }

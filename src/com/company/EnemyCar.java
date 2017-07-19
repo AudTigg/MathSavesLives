@@ -11,23 +11,13 @@ import java.awt.event.KeyEvent;
 public class EnemyCar extends GameObject {
     public EnemyCar() {
         super("EnemyCar", 60, 140, "car - Copy.png");
-        setRectangleCollider(30,70);
+        setRectangleCollider(30, 70);
     }
-
 
 
     @Override
     public void update(float dt) {
         setPositionY(getPositionY() - 2);
-        // setRotation(getRotation() + 3);
-       /* if(InputManager.isPressed(KeyEvent.VK_LEFT)){
-            float x = getPositionX();
-            x+= -3;
-            setPositionX(x);
-        }
-        if (InputManager.isPressed(KeyEvent.VK_RIGHT)){
-            float x = getPositionX();
-            x += 3;
-            setPositionX(x);*/
-        }
+
     }
+}

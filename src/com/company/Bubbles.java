@@ -16,4 +16,16 @@ public class Bubbles extends GameObject {
         setPositionY(getPositionY() + 2);
 
     }
+    @Override
+    public void collisionReaction(GameObject collidedWith) {
+        if(!collidedWith.getName().equals("LamborghiniHuracan") && !collidedWith.getName().equals("Bubbles"))
+        {
+            collidedWith.kill();
+            kill();
+        }
+        if (collidedWith.getName().equals("DivisionCar") || collidedWith.getName().equals("EnemyCar") || collidedWith.getName().equals("Pi")){
+            collidedWith.kill();
+            kill();
+        }
+    }
 }
