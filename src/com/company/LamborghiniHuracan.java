@@ -15,9 +15,13 @@ import java.awt.event.KeyEvent;
         super("LamborghiniHuracan", 120, 160, "lambo hurican.png");
         setRectangleCollider(40, 80);
     }
+    public int lives = 0;
 
     @Override
     public void update(float dt) {
+        if (lives <=0){
+            GameObject Gameover = new GameObject("Gameover", 500, 500, "download.png");
+        }
         if (InputManager.isPressed(KeyEvent.VK_RIGHT)) {
             float x = getPositionX();
             x += 3;
@@ -54,7 +58,9 @@ import java.awt.event.KeyEvent;
 
     @Override
     public void collisionReaction(GameObject collidedWith) {
+        setPosition(40, 80);
         Graphics.setDrawCollisionData(true);
+        Graphics.setCollisionDataColor(0,1,0);
 
     }
 }
