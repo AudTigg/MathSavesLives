@@ -8,24 +8,29 @@ import java.awt.event.KeyEvent;
 /**
  * Created by lucas.lisboa on 7/18/2017.
  */
-    public class LamborghiniHuracan extends GameObject{
-        public LamborghiniHuracan(){
-            super("LamborghiniHuracan", 120, 160, "lambo hurican.png");
+    public class LamborghiniHuracan extends GameObject {
+    public LamborghiniHuracan() {
+        super("LamborghiniHuracan", 120, 160, "lambo hurican.png");
+    }
+
+    @Override
+    public void update(float dt) {
+        if (InputManager.isPressed(KeyEvent.VK_RIGHT)) {
+            float x = getPositionX();
+            x += 3;
+            setPositionX(x);
         }
-        @Override
-        public void update(float dt) {
-            if(InputManager.isPressed(KeyEvent.VK_RIGHT)){
-                float x = getPositionX();
-                x += 3;
-                setPositionX(x);
-            }
-            if (InputManager.isPressed(KeyEvent.VK_LEFT)){
-                float x = getPositionX();
-                x +=-3;
-                setPositionX(x);
+        if (InputManager.isPressed(KeyEvent.VK_LEFT)) {
+            float x = getPositionX();
+            x += -3;
+            setPositionX(x);
 
-            }
         }
+    }
 
+    @Override
+    public void collisionReaction(GameObject collidedWith) {
+        setPosition(40, 80);
 
+    }
 }
