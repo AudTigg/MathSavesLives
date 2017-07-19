@@ -55,7 +55,6 @@ import java.awt.event.KeyEvent;
     @Override
     public void collisionReaction(GameObject collidedWith) {
         Graphics.setDrawCollisionData(true);
-        ObjectManager.;
 
     }
 }
