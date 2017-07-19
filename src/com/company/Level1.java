@@ -45,6 +45,10 @@ Random r = new Random(5);
             ObjectManager.addGameObject(obj1);
             ++i;
         }
+        GameObject Pi = new Pi();
+        ObjectManager.addGameObject(Pi);
+        Pi.setPositionY(150);
+        Pi.setPositionX(-30);
 
         Graphics.setDrawCollisionData(true);
     }

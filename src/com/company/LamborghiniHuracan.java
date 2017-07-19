@@ -24,6 +24,16 @@ import java.awt.event.KeyEvent;
             float x = getPositionX();
             x += -3;
             setPositionX(x);
+        }
+        if (InputManager.isPressed(KeyEvent.VK_D)) {
+            float x = getPositionX();
+            x += 3;
+            setPositionX(x);
+        }
+        if (InputManager.isPressed(KeyEvent.VK_A)) {
+            float x = getPositionX();
+            x += -3;
+            setPositionX(x);
 
         }
     }
