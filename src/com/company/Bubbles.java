@@ -9,5 +9,10 @@ public class Bubbles extends GameObject {
     public Bubbles(){
         super("Bubbles", 20, 20, "pixil-layer-Background.png");
         setRectangleCollider(10,10);
+
+    }
+    @Override
+    public void update(float dt) {
+        setPositionY(getPositionY() + 2);
     }
 }
