@@ -3,6 +3,7 @@ package com.company;
 import edu.digipen.InputManager;
 import edu.digipen.gameobject.GameObject;
 import edu.digipen.gameobject.ObjectManager;
+import edu.digipen.graphics.Graphics;
 
 import java.awt.event.KeyEvent;
 
@@ -41,6 +42,9 @@ import java.awt.event.KeyEvent;
             {
                 GameObject bubble = new Bubbles();
                 ObjectManager.addGameObject(bubble);
+                Graphics.setCollisionDataColor(0,1,0);
+                float x = getPositionX();
+                bubble.setPosition(x,-30);
 
 
             }
@@ -50,6 +54,8 @@ import java.awt.event.KeyEvent;
     @Override
     public void collisionReaction(GameObject collidedWith) {
         setPosition(40, 80);
+        Graphics.setDrawCollisionData(true);
+        Graphics.setCollisionDataColor(0,1,0);
 
     }
 }
