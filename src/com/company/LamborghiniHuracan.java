@@ -38,9 +38,8 @@ import java.awt.event.KeyEvent;
 
         }
         if (InputManager.isPressed(KeyEvent.VK_SPACE)){
-            @Override
-            public void create(){
-                GameObject bubble = new Bubble();
+            {
+                GameObject bubble = new Bubbles();
                 ObjectManager.addGameObject(bubble);
 
 

@@ -7,7 +7,7 @@ import edu.digipen.gameobject.GameObject;
  */
 public class Bubbles extends GameObject {
     public Bubbles(){
-        super("Bubbles", 100, 100, "pixil-layer-Background (1).png");
-        setRectangleCollider(40,80);
+        super("Bubbles", 20, 20, "pixil-layer-Background.png");
+        setRectangleCollider(10,10);
     }
 }
