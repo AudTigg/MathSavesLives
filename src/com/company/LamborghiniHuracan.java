@@ -2,6 +2,7 @@ package com.company;
 
 import edu.digipen.InputManager;
 import edu.digipen.gameobject.GameObject;
+import edu.digipen.gameobject.ObjectManager;
 
 import java.awt.event.KeyEvent;
 
@@ -35,6 +36,15 @@ import java.awt.event.KeyEvent;
             x += -3;
             setPositionX(x);
 
+        }
+        if (InputManager.isPressed(KeyEvent.VK_SPACE)){
+            @Override
+            public void create(){
+                GameObject bubble = new Bubble();
+                ObjectManager.addGameObject(bubble);
+
+
+            }
         }
     }
 

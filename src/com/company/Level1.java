@@ -26,12 +26,12 @@ public class Level1 extends GameLevel
         ObjectManager.addGameObject(enemycar);
 Random r = new Random(5);
         enemycar.setPositionY(300);
-        enemycar.setPositionX(50);
+        enemycar.setPositionX(60);
 
         GameObject divisionCar = new DivisionCar();
         ObjectManager.addGameObject(divisionCar);
 
-        divisionCar.setPositionY(400);
+        divisionCar.setPositionY(300);
 
         GameObject LamborghiniHuracan = new LamborghiniHuracan();
         ObjectManager.addGameObject(LamborghiniHuracan);

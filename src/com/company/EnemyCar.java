@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
  */
 public class EnemyCar extends GameObject {
     public EnemyCar() {
-        super("EnemyCar", 120, 160, "pixil-layer-Background (2).png");
+        super("EnemyCar", 120, 160, "car-Copy.png");
         setRectangleCollider(40,80);
     }
 
