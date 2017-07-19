@@ -71,11 +71,11 @@ public class Level1 extends GameLevel {
             ObjectManager.addGameObject(Pi);
             int lane2 = getRandomValue(0, 2);
             if (lane2 == 0) {
-                Pi.setPositionX(-40);
+                Pi.setPositionX(-100);
             } else if (lane2 == 1) {
                 Pi.setPositionX(0);
             } else if (lane2 == 2) {
-                Pi.setPositionX(40);
+                Pi.setPositionX(100);
             }
 
             Pi.setPositionY(300 + i2 * 1000);
