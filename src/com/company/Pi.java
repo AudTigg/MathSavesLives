@@ -9,6 +9,7 @@ public class Pi extends GameObject{
 
     public Pi() {
         super("P1", 50, 50, "pixil-layer-Background (3).png ");
+        setRectangleCollider(50, 50);
     }
 
     @Override

@@ -7,8 +7,8 @@ import edu.digipen.gameobject.GameObject;
  */
 public class DivisionCar extends GameObject {
     public DivisionCar(){
-        super("DivisionCar", 120, 160, "pixil-layer-Background (4).png");
-        setRectangleCollider(40,80);
+        super("DivisionCar", 80, 140, "pixil-layer-Background (4).png");
+        setRectangleCollider(40, 70);
     }
     @Override
     public void update(float dt) {
