@@ -4,15 +4,18 @@
 package com.company;
 
 import edu.digipen.Game;
+import edu.digipen.InputManager;
 
-public class Main {
+import java.awt.event.KeyEvent;
 
-    public static void main(String[] args) {
-
-        Game.initialize(500, 500, 60, new Level1());
-        while(Game.getQuit() == false)
+public class Main{
+public static void main(String[] args) {
+        Game.initialize(500, 500, 60, new MainMenu());
+        while (Game.getQuit() == false)
             Game.update();
         Game.destroy();
+    //this is so we can push
+
     }
 }
 

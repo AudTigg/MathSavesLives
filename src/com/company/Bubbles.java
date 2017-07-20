@@ -8,36 +8,41 @@ import edu.digipen.gameobject.ObjectManager;
  */
 public class Bubbles extends GameObject {
     int lives = 5;
-    public Bubbles(){
+    public Bubbles() {
         super("Bubbles", 20, 20, "pixil-layer-Background.png");
         setCircleCollider(10);
 
     }
+
     @Override
     public void update(float dt) {
         setPositionY(getPositionY() + 2);
 
     }
+
     @Override
     public void collisionReaction(GameObject collidedWith) {
-        if(!collidedWith.getName().equals("LamborghiniHuracan") && !collidedWith.getName().equals("Bubbles"))
-        {
+        if (!collidedWith.getName().equals("LamborghiniHuracan") && !collidedWith.getName().equals("Bubbles")) {
             collidedWith.kill();
             kill();
         }
-        if (collidedWith.getName().equals("DivisionCar")){
+        if (collidedWith.getName().equals("DivisionCar") || collidedWith.getName().equals("EnemyCar")){
             collidedWith.kill();
-            lives += -3;
-            if (lives <= 0){
+            kill();
+        }
+       if (collidedWith.getName().equals("Pi")){
+           collidedWith.kill();
+           kill();
+           lives += +1;
+       }
+        if (collidedWith.getName().equals("DivisionCar")) {
+            collidedWith.kill();
+            lives += -2;
+            if (lives <= 0) {
                 kill();
                 GameObject gameOver = new GameOver();
                 ObjectManager.addGameObject(gameOver);
-        }
-        if (collidedWith.getName().equals("Pi")){
-            collidedWith.kill();
-            lives += 1;
-        }
-
+            }
         }
     }
 }

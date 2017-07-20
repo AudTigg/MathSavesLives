@@ -67,7 +67,16 @@ import java.awt.event.KeyEvent;
         }
         if (collidedWith.getName().equals("DivisionCar")){
             collidedWith.kill();
-            lives += -3;
+            lives += -2;
+            if (lives <= 0){
+                kill();
+                GameObject gameOver = new GameOver();
+                ObjectManager.addGameObject(gameOver);
+            }
+        }
+        if (collidedWith.getName().equals("Pi")){
+            collidedWith.kill();
+            lives += +1;
             if (lives <= 0){
                 kill();
                 GameObject gameOver = new GameOver();
