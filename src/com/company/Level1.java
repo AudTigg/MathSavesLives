@@ -32,6 +32,18 @@ public class Level1 extends GameLevel {
         ObjectManager.addGameObject(bubble);*/
         // GameObject obj1 = new GameObject("car", 64, 64, "car - Copy.png" );
 
+
+
+        GameObject road1 = new road();
+        road1.setPositionY(0);
+
+        GameObject road2 = new road();
+        road2.setPositionY(128*10-5);
+
+        GameObject road3 = new road();
+        road3.setPositionY(128*20-5);
+
+
         int i = 0;
         while (i < 1) {
             GameObject enemycar = new EnemyCar();
@@ -122,11 +134,11 @@ public class Level1 extends GameLevel {
     @Override
     public void update(float v) {
 
-        int counter;
-        if(counter >= 5)
+        //int counter;
+        //if(counter >= 5)
         {
             // Create car
-            counter = 0;
+          //  counter = 0;
         }
 
     }
