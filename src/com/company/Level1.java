@@ -122,10 +122,11 @@ public class Level1 extends GameLevel {
     @Override
     public void update(float v) {
 
-        int counter;
+        int counter = 0;
         if(counter >= 5)
         {
-            // Create car
+           GameObject EnemyCar = new EnemyCar();
+            ObjectManager.addGameObject(EnemyCar);
             counter = 0;
         }
 
