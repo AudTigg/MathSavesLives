@@ -1,11 +1,13 @@
 package com.company;
 
 import edu.digipen.gameobject.GameObject;
+import edu.digipen.gameobject.ObjectManager;
 
 /**
  * Created by audrey.gruian on 7/19/2017.
  */
 public class Bubbles extends GameObject {
+    int lives = 5;
     public Bubbles(){
         super("Bubbles", 20, 20, "pixil-layer-Background.png");
         setCircleCollider(10);
@@ -23,9 +25,19 @@ public class Bubbles extends GameObject {
             collidedWith.kill();
             kill();
         }
-        if (collidedWith.getName().equals("DivisionCar") || collidedWith.getName().equals("EnemyCar") || collidedWith.getName().equals("Pi")){
+        if (collidedWith.getName().equals("DivisionCar")){
             collidedWith.kill();
-            kill();
+            lives += -3;
+            if (lives <= 0){
+                kill();
+                GameObject gameOver = new GameOver();
+                ObjectManager.addGameObject(gameOver);
+        }
+        if (collidedWith.getName().equals("Pi")){
+            collidedWith.kill();
+            lives += 1;
+        }
+
         }
     }
 }

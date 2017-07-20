@@ -13,7 +13,7 @@ public class DivisionCar extends GameObject {
     }
     @Override
     public void update(float dt) {
-        setPositionY(getPositionY() - 1);
+        setPositionY(getPositionY() - 2);
     }
     @Override
     public void collisionReaction(GameObject collidedWith){

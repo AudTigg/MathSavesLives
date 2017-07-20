@@ -33,7 +33,7 @@ public class Level1 extends GameLevel {
         // GameObject obj1 = new GameObject("car", 64, 64, "car - Copy.png" );
 
         int i = 0;
-        while (i < 1000) {
+        while (i < 1) {
             GameObject enemycar = new EnemyCar();
             ObjectManager.addGameObject(enemycar);
 
@@ -53,7 +53,7 @@ public class Level1 extends GameLevel {
         }
 
         int i1 = 0;
-        while (i1 < 10) {
+        while (i1 < 1) {
             GameObject divisionCar = new DivisionCar();
             ObjectManager.addGameObject(divisionCar);
             int lane1 = getRandomValue(0, 2);
@@ -69,7 +69,7 @@ public class Level1 extends GameLevel {
             ++i1;
         }
         int i2 = 0;
-        while (i2 < 10) {
+        while (i2 < 1) {
             GameObject Pi = new Pi();
             ObjectManager.addGameObject(Pi);
             int lane2 = getRandomValue(0, 2);
@@ -89,6 +89,22 @@ public class Level1 extends GameLevel {
 
         LamborghiniHuracan.setPositionY(-150);
 
+
+        int i3 = 0;
+        while (i3 <1) {
+            GameObject Jacob_McPeak = new Jacob_McPeak();
+            ObjectManager.addGameObject(Jacob_McPeak);
+            int lane3 = getRandomValue(0, 2);
+            if (lane3 == 0) {
+                Jacob_McPeak.setPositionX(-320);
+            } else if (lane3 == 1) {
+                Jacob_McPeak.setPositionX(0);
+            } else if (lane3 == 2) {
+                Jacob_McPeak.setPositionX(320);
+            }
+            Jacob_McPeak.setPositionY(300 + i3 * 300);
+            ++i3;
+        }
 //        int i = 0;
 //        while (i < 10) {
 //            GameObject obj1 = new EnemyCar();
@@ -105,16 +121,13 @@ public class Level1 extends GameLevel {
 
     @Override
     public void update(float v) {
-        if(spawnTimer <= 0)
-        {
-            //do spawning code
-            //reset timer
-        }
-        else
-        {
-            spawnTimer -= v;
-        }
 
+        int counter;
+        if(counter >= 5)
+        {
+            // Create car
+            counter = 0;
+        }
 
     }
 
