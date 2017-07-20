@@ -12,7 +12,7 @@ import edu.digipen.gameobject.GameObject;
 
     @Override
     public void update(float dt) {
-        setPositionY(getPositionY() - 4);
+        setPositionY(getPositionY() - 5);
 
         if(getPositionY() < -128*10)
         {

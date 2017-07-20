@@ -9,7 +9,7 @@ import edu.digipen.gameobject.ObjectManager;
 public class Bubbles extends GameObject {
     int lives = 5;
     public Bubbles() {
-        super("Bubbles", 20, 20, "pixil-layer-Background.png");
+        super("Bubbles", 100, 100, "pixil-layer-Background (1).png");
         setCircleCollider(10);
 
     }

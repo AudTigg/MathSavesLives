@@ -14,6 +14,6 @@ public class Pi extends GameObject{
 
     @Override
     public void update(float dt) {
-        setPositionY(getPositionY() - 2);
+        setPositionY(getPositionY() - 3);
     }
 }

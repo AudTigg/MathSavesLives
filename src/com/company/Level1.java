@@ -27,6 +27,13 @@ public class Level1 extends GameLevel { // Push
  // Push
     @Override // Push
     public void create() { // Push
+
+        road r1 = new road();
+        r1.setPositionY(0);
+        road r2 = new road();
+        r2.setPositionY(128*10-5);
+        road r3 = new road();
+        r3.setPositionY(128*20-5);
         //GameObject obj1 = new GameObject("Object1", 160, 180, "pixil-layer-Background (2).png"); // Push
         //ObjectManager.addGameObject(obj1); // Push
         /*GameObject bubble = new GameObject("Bubble", 100, 100, "pixil-layer-Background (1).png"); // Push
@@ -106,6 +113,7 @@ public class Level1 extends GameLevel { // Push
             Jacob_McPeak.setPositionY(300 + i3 * 300); // Push
             ++i3; // Push
         } // Push
+
 //        int i = 0;
 //        while (i < 10) {
 //            GameObject obj1 = new EnemyCar();
@@ -115,26 +123,54 @@ public class Level1 extends GameLevel { // Push
 //        }
     }
 
-    @Override// Push
-    public void initialize() {// Push
-// Push
-    }// Push
-// Push
-    @Override// Push
-    public void update(float v) {// Push
-// Push
-        int counter = 0;
-        if(counter >= 5)
-        {
-           GameObject EnemyCar = new EnemyCar();// Push
-            ObjectManager.addGameObject(EnemyCar);// Push
-            counter = 0;// Push
-        }// Push
-// Push
-    }// Push
-// Push
-    @Override// Push
-    public void uninitialize() {// Push
-// Push
-    }// Push
+    @Override
+    public void initialize() {
+
+    }
+
+    float counter = 0;
+
+    @Override
+    public void update(float dt) {
+        counter += dt;
+
+        if (counter >= 2) {
+            GameObject EnemyCar = new EnemyCar();
+            ObjectManager.addGameObject(EnemyCar);
+            counter = 0;
+            int lane = getRandomValue(0, 2);
+
+            if (lane == 0) {
+                EnemyCar.setPositionX(-320);
+            } else if (lane == 1) {
+                EnemyCar.setPositionX(0);
+            } else if (lane == 2) {
+                EnemyCar.setPositionX(320);
+            }
+
+            EnemyCar.setPositionY(700);
+        }
+        if (counter >= 2) {
+            GameObject DivisionCar = new DivisionCar();
+            ObjectManager.addGameObject(DivisionCar);
+            counter = 0;
+            int lane = getRandomValue(0, 2);
+
+            if (lane == 0) {
+                DivisionCar.setPositionX(-320);
+            } else if (lane == 1) {
+                DivisionCar.setPositionX(0);
+            } else if (lane == 2) {
+                DivisionCar.setPositionX(320);
+            }
+
+            DivisionCar.setPositionY(700);
+        }
+    }
+
+
+    @Override
+    public void uninitialize() {
+
+    }
 }

@@ -20,24 +20,46 @@ import java.awt.event.KeyEvent;
 
     @Override
     public void update(float dt) {
+
         if (InputManager.isPressed(KeyEvent.VK_RIGHT)) {
             float x = getPositionX();
-            x += 10;
+            x += 5;
             setPositionX(x);
+            float xx = getPositionX();
+            if (xx <= -500) {
+                setPositionX(0);
+            }
+            if (xx >= 500){
+                setPositionX(0);
+            }
         }
         if (InputManager.isPressed(KeyEvent.VK_LEFT)) {
             float x = getPositionX();
-            x += -10;
+            x += -5;
             setPositionX(x);
+            float xx = getPositionX();
+            if (xx <= -500) {
+                setPositionX(0);
+            }
+            if (xx >= 500){
+                setPositionX(0);
+            }
         }
         if (InputManager.isPressed(KeyEvent.VK_D)) {
             float x = getPositionX();
-            x += 10;
+            x += 5;
             setPositionX(x);
+            float xx = getPositionX();
+            if (xx <= -500) {
+                setPositionX(0);
+            }
+            if (xx >= 500){
+                setPositionX(0);
+            }
         }
         if (InputManager.isPressed(KeyEvent.VK_A)) {
             float x = getPositionX();
-            x += -10;
+            x += -5;
             setPositionX(x);
 
         }
