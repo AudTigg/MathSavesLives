@@ -14,6 +14,7 @@ public static void main(String[] args) {
         while (Game.getQuit() == false)
             Game.update();
         Game.destroy();
+    //this is so we can push
 
     }
 }
