@@ -16,8 +16,8 @@ import java.awt.event.KeyEvent;
     SpriteText scoreText = new SpriteText("score " + score, 40, SpriteText.Alignment.CENTER,20, 550,500);
     float lives = 10;
     SpriteText livesText = new SpriteText("score " + score, 40, SpriteText.Alignment.CENTER,20, -550,500);
-    public LamborghiniHuracan() {
-        super("LamborghiniHuracan", 120, 160, "lambo hurican.png");
+    public LamborghiniHuracan(String texturePath) {
+        super("LamborghiniHuracan", 180, 220, texturePath);
         setRectangleCollider(40, 80);
     }
     private float shootDelayMax = 1;

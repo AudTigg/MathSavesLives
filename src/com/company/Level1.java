@@ -3,12 +3,16 @@ package com.company; // Push
  * Created by lucas.lisboa on 7/17/2017. // Push
  */ // Push
  // Push
+import edu.digipen.InputManager;
 import edu.digipen.gameobject.GameObject; // Push
 import edu.digipen.gameobject.ObjectManager; // Push
 import edu.digipen.graphics.Graphics; // Push
 import edu.digipen.level.GameLevel; // Push
+import edu.digipen.level.GameLevelManager;
 import edu.digipen.math.PFRandom; // Push
- // Push
+import jdk.internal.util.xml.impl.Input;
+// Push
+import java.awt.event.KeyEvent;
 import java.util.Random; // Push
 //this is so we can push // Push
  // Push
@@ -19,6 +23,12 @@ public class Level1 extends GameLevel { // Push
  // Push
    float spawnTimer = 1.0f; // Push
  // Push
+    private String carChoice;
+    public Level1(String carChoice_)
+    {
+        carChoice = carChoice_;
+    }
+
     int getRandomValue(int min, int max) { // Push
         Random r = new Random(); // Push
         return Math.abs(r.nextInt() % ((max + 1) - min) + min); // Push
@@ -92,7 +102,7 @@ public class Level1 extends GameLevel { // Push
             Pi.setPositionY(300 + i2 * 1000); // Push
             ++i2; // Push
         } // Push
-        GameObject LamborghiniHuracan = new LamborghiniHuracan(); // Push
+        GameObject LamborghiniHuracan = new LamborghiniHuracan(carChoice); // Push
         ObjectManager.addGameObject(LamborghiniHuracan); // Push
  // Push
         LamborghiniHuracan.setPositionY(-150); // Push
@@ -136,6 +146,11 @@ public class Level1 extends GameLevel { // Push
         counter += dt;
         counter2 += dt;
         counter3 += dt;
+
+        if(InputManager.isTriggered(KeyEvent.VK_ESCAPE))
+        {
+            GameLevelManager.goToLevel(new MainMenu());
+        }
 
         if (counter >= 1.5) {
             GameObject EnemyCar = new EnemyCar();
@@ -192,4 +207,6 @@ public class Level1 extends GameLevel { // Push
     public void uninitialize() {
 
     }
+
+
 }

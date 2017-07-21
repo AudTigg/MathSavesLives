@@ -29,7 +29,7 @@ public class MainMenu extends GameLevel {
     @Override
     public void update(float v) {
         if (InputManager.isPressed(KeyEvent.VK_S)) {
-            GameLevelManager.goToLevel(new Level1());
+            GameLevelManager.goToLevel(new ChooseCar());
         }
     }
 
