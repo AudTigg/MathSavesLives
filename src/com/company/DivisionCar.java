@@ -16,15 +16,7 @@ public class DivisionCar extends GameObject {
     public void update(float dt) {
         setPositionY(getPositionY() - 5);
             counter += dt;
-            System.out.println(counter);
             setPositionY(getPositionY() -counter);
     }
-    @Override
-    public void collisionReaction(GameObject collidedWith){
-        if(collidedWith.getName().equals("Bubbles"))
-        {
-            collidedWith.kill();
-            kill();
-        }
-    }
+
 }

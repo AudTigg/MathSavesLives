@@ -19,7 +19,6 @@ public class EnemyCar extends GameObject {
     public void update(float dt) {
         setPositionY(getPositionY() - 4);
             counter += dt;
-            System.out.println(counter);
             setPositionY(getPositionY() -counter);
     }
 

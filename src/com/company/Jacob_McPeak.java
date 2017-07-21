@@ -16,7 +16,6 @@ public class Jacob_McPeak extends GameObject {
     @Override
     public void update(float dt){
         counter += dt;
-        System.out.println(counter);
         setPositionY(getPositionY() -counter);
 
     }

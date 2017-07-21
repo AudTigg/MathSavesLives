@@ -16,7 +16,6 @@ public class Pi extends GameObject{
     public void update(float dt) {
         setPositionY(getPositionY() - 2);
             counter += dt;
-            System.out.println(counter);
             setPositionY(getPositionY() -counter);
     }
 }

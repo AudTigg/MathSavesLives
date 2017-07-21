@@ -12,16 +12,21 @@ import java.awt.event.KeyEvent;
  */
 
     public class LamborghiniHuracan extends GameObject {
-    int lives = 10;
-
+    static int score = 0;
+    SpriteText scoreText = new SpriteText("score " + score, 40, SpriteText.Alignment.CENTER,20, 550,500);
+    float lives = 10;
+    SpriteText livesText = new SpriteText("score " + score, 40, SpriteText.Alignment.CENTER,20, -550,500);
     public LamborghiniHuracan() {
         super("LamborghiniHuracan", 120, 160, "lambo hurican.png");
         setRectangleCollider(40, 80);
     }
-
+    private float shootDelayMax = 1;
+    private float shootDelay = 1;
     @Override
     public void update(float dt) {
-
+        scoreText.Change("Score "+ score);
+        livesText.Change("Lives "+ (int)lives);
+        shootDelay -= dt;
         if (InputManager.isPressed(KeyEvent.VK_RIGHT)) {
             float x = getPositionX();
             x += 5;
@@ -64,15 +69,14 @@ import java.awt.event.KeyEvent;
             setPositionX(x);
 
         }
-        if (InputManager.isTriggered(KeyEvent.VK_SPACE)) {
+        if (InputManager.isPressed(KeyEvent.VK_SPACE) && shootDelay <= 0) {
             {
                 GameObject bubble = new Bubbles();
                 ObjectManager.addGameObject(bubble);
                 Graphics.setCollisionDataColor(0, 1, 0);
                 float x = getPositionX();
                 bubble.setPosition(x, -30);
-
-
+                shootDelay = shootDelayMax;
             }
         }
     }
@@ -97,9 +101,9 @@ import java.awt.event.KeyEvent;
                 ObjectManager.addGameObject(gameOver);
             }
         }
-        if (collidedWith.getName().equals("Pi")) {
+        if (collidedWith.getName().equals("P1")) {
             collidedWith.kill();
-            lives += +1;
+            lives++;
             if (lives <= 0) {
                 kill();
                 GameObject gameOver = new GameOver();
@@ -117,3 +121,4 @@ import java.awt.event.KeyEvent;
         }
     }
 }
+
