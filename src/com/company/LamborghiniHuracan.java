@@ -12,7 +12,8 @@ import java.awt.event.KeyEvent;
  */
 
     public class LamborghiniHuracan extends GameObject {
-    int lives = 5;
+    int lives = 10;
+
     public LamborghiniHuracan() {
         super("LamborghiniHuracan", 120, 160, "lambo hurican.png");
         setRectangleCollider(40, 80);
@@ -29,7 +30,7 @@ import java.awt.event.KeyEvent;
             if (xx <= -500) {
                 setPositionX(0);
             }
-            if (xx >= 500){
+            if (xx >= 500) {
                 setPositionX(0);
             }
         }
@@ -41,7 +42,7 @@ import java.awt.event.KeyEvent;
             if (xx <= -500) {
                 setPositionX(0);
             }
-            if (xx >= 500){
+            if (xx >= 500) {
                 setPositionX(0);
             }
         }
@@ -53,7 +54,7 @@ import java.awt.event.KeyEvent;
             if (xx <= -500) {
                 setPositionX(0);
             }
-            if (xx >= 500){
+            if (xx >= 500) {
                 setPositionX(0);
             }
         }
@@ -63,13 +64,13 @@ import java.awt.event.KeyEvent;
             setPositionX(x);
 
         }
-        if (InputManager.isTriggered(KeyEvent.VK_SPACE)){
+        if (InputManager.isTriggered(KeyEvent.VK_SPACE)) {
             {
                 GameObject bubble = new Bubbles();
                 ObjectManager.addGameObject(bubble);
-                Graphics.setCollisionDataColor(0,1,0);
+                Graphics.setCollisionDataColor(0, 1, 0);
                 float x = getPositionX();
-                bubble.setPosition(x,-30);
+                bubble.setPosition(x, -30);
 
 
             }
@@ -78,50 +79,41 @@ import java.awt.event.KeyEvent;
 
     @Override
     public void collisionReaction(GameObject collidedWith) {
-        if (collidedWith.getName().equals("EnemyCar")){
+        if (collidedWith.getName().equals("EnemyCar")) {
             collidedWith.kill();
             lives += -1;
-            if (lives <= 0){
+            if (lives <= 0) {
                 kill();
                 GameObject gameOver = new GameOver();
                 ObjectManager.addGameObject(gameOver);
             }
         }
-        if (collidedWith.getName().equals("DivisionCar")){
+        if (collidedWith.getName().equals("DivisionCar")) {
             collidedWith.kill();
             lives += -2;
-            if (lives <= 0){
+            if (lives <= 0) {
                 kill();
                 GameObject gameOver = new GameOver();
                 ObjectManager.addGameObject(gameOver);
             }
         }
-        if (collidedWith.getName().equals("Pi")){
+        if (collidedWith.getName().equals("Pi")) {
             collidedWith.kill();
             lives += +1;
-            if (lives <= 0){
+            if (lives <= 0) {
                 kill();
                 GameObject gameOver = new GameOver();
                 ObjectManager.addGameObject(gameOver);
             }
         }
-        if (collidedWith.getName().equals("Jacob_McPeak")){
+        if (collidedWith.getName().equals("Jacob_McPeak")) {
             collidedWith.kill();
             lives += -3;
-            if (lives <= 0){
+            if (lives <= 0) {
                 kill();
                 GameObject gameOver = new GameOver();
                 ObjectManager.addGameObject(gameOver);
             }
         }
-        if (collidedWith.getName().equals("Pi")){
-            collidedWith.kill();
-            lives += 1;
-            if (lives <= 0){
-                kill();
-                GameObject gameOver = new GameOver();
-                ObjectManager.addGameObject(gameOver);
+    }
 }
-        }
-        }
-        }

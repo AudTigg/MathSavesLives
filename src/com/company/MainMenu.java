@@ -14,16 +14,17 @@ import java.awt.event.KeyEvent;
 public class MainMenu extends GameLevel {
     @Override
     public void create() {
-
+        GameObject startText = new GameObject("StartText", 500, 500, "press_s.png");
+        ObjectManager.addGameObject(startText);
+        startText.setPositionY(100);
     }
 
     @Override
         public void initialize() {
-            GameObject startText = new GameObject("StartText", 400, 400, "press_s.png");
-            startText.setPositionY(100);
-            ObjectManager.addGameObject(startText);
-
-            }
+        GameObject startText = new GameObject("StartText", 500, 500, "press_s.png");
+        ObjectManager.addGameObject(startText);
+        startText.setPositionY(100);
+    }
 
     @Override
     public void update(float v) {

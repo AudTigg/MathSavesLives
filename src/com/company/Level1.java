@@ -129,13 +129,15 @@ public class Level1 extends GameLevel { // Push
     }
     float counter = 0;
     float counter2 = 0;
+    float counter3 = 0;
 
     @Override
     public void update(float dt) {
         counter += dt;
         counter2 += dt;
+        counter3 += dt;
 
-        if (counter >= 2) {
+        if (counter >= 1.5) {
             GameObject EnemyCar = new EnemyCar();
             ObjectManager.addGameObject(EnemyCar);
             counter = 0;
@@ -166,6 +168,22 @@ public class Level1 extends GameLevel { // Push
             }
 
             DivisionCar.setPositionY(700);
+        }
+        if (counter3 >= 1){
+            GameObject Pi = new Pi();
+            ObjectManager.addGameObject(Pi);
+            counter3 = 0;
+            int lane = getRandomValue(0, 2);
+
+            if (lane == 0) {
+                Pi.setPositionX(-320);
+            } else if (lane == 1) {
+                Pi.setPositionX(0);
+            } else if (lane == 2) {
+                Pi.setPositionX(320);
+            }
+
+            Pi.setPositionY(700);
         }
     }
 
