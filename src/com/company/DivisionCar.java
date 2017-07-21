@@ -11,9 +11,13 @@ public class DivisionCar extends GameObject {
         super("DivisionCar", 80, 140, "pixil-layer-Background (4).png");
         setRectangleCollider(40, 70);
     }
+    float counter = 0;
     @Override
     public void update(float dt) {
-        setPositionY(getPositionY() - 4);
+        setPositionY(getPositionY() - 5);
+            counter += dt;
+            System.out.println(counter);
+            setPositionY(getPositionY() -counter);
     }
     @Override
     public void collisionReaction(GameObject collidedWith){

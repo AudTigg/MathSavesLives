@@ -121,18 +121,19 @@ public class Level1 extends GameLevel { // Push
 //            ObjectManager.addGameObject(obj1);
 //            ++i;
 //        }
-    }
+    GameObject penguin = new PENguin();
+    ObjectManager.addGameObject(penguin);
 
-    @Override
+}   @Override
     public void initialize() {
-
     }
-
     float counter = 0;
+    float counter2 = 0;
 
     @Override
     public void update(float dt) {
         counter += dt;
+        counter2 += dt;
 
         if (counter >= 2) {
             GameObject EnemyCar = new EnemyCar();
@@ -150,10 +151,10 @@ public class Level1 extends GameLevel { // Push
 
             EnemyCar.setPositionY(700);
         }
-        if (counter >= 2) {
+        if (counter2 >= 2) {
             GameObject DivisionCar = new DivisionCar();
             ObjectManager.addGameObject(DivisionCar);
-            counter = 0;
+            counter2 = 0;
             int lane = getRandomValue(0, 2);
 
             if (lane == 0) {

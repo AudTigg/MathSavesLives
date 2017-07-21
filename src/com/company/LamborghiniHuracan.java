@@ -121,7 +121,7 @@ import java.awt.event.KeyEvent;
                 kill();
                 GameObject gameOver = new GameOver();
                 ObjectManager.addGameObject(gameOver);
-            }
-        }
-    }
 }
+        }
+        }
+        }

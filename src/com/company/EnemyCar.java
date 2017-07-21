@@ -14,10 +14,13 @@ public class EnemyCar extends GameObject {
         setRectangleCollider(30, 70);
     }
 
-
+    float counter = 0;
     @Override
     public void update(float dt) {
         setPositionY(getPositionY() - 4);
-
+            counter += dt;
+            System.out.println(counter);
+            setPositionY(getPositionY() -counter);
     }
+
 }

@@ -11,9 +11,12 @@ public class Pi extends GameObject{
         super("P1", 60, 60, "pixil-layer-Background (3).png ");
         setRectangleCollider(30, 30);
     }
-
+    float counter = 0;
     @Override
     public void update(float dt) {
-        setPositionY(getPositionY() - 3);
+        setPositionY(getPositionY() - 2);
+            counter += dt;
+            System.out.println(counter);
+            setPositionY(getPositionY() -counter);
     }
 }
